@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pottu Brahmam - AI & Web Developer</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body,
+      html {
+        font-family: "Orbitron", sans-serif;
+        color: #fff;
+        height: 100%;
+        background: #0d0d1d;
+      }
+
+      /* Fullscreen robot video */
+      .video-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: -2;
+      }
+
+      /* Dark overlay for readability */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+      }
+
+      header {
+        background: #000000aa;
+        padding: 20px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        box-shadow: 0 0 10px cyan;
+      }
+
+      header h1 {
+        color: cyan;
+        font-size: 28px;
+      }
+
+      nav ul {
+        display: flex;
+        gap: 20px;
+      }
+
+      nav ul li {
+        list-style: none;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: cyan;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 120px 20px 80px;
+      }
+
+      .hero h2 {
+        font-size: 2.5rem;
+        color: #00ffe0;
+        margin-bottom: 10px;
+      }
+
+      .typing-text {
+        font-size: 1.3rem;
+        border-right: 2px solid cyan;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 0;
+        animation: typing 4s steps(40, end) forwards,
+          blink 0.75s step-end infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+
+      section {
+        padding: 60px 30px;
+        max-width: 1100px;
+        margin: auto;
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+
+      section.reveal {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      h2.section-title {
+        font-size: 2rem;
+        color: #00eaff;
+        border-bottom: 2px solid cyan;
+        margin-bottom: 20px;
+      }
+
+      .info-block {
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      .skills,
+      .projects ul,
+      .education ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .skills span,
+      .projects li,
+      .education li {
+        background: #1f1f2f;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: 1px solid cyan;
+        flex: 1 1 200px;
+        text-align: center;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background: #1f1f2f;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid cyan;
+        max-width: 600px;
+        margin: auto;
+      }
+
+      form input,
+      form textarea {
+        padding: 12px;
+        border-radius: 6px;
+        border: none;
+        background: #2c2c3c;
+        color: white;
+        resize: none;
+      }
+
+      form button {
+        background: cyan;
+        border: none;
+        padding: 10px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        color: black;
+        transition: background 0.3s;
+      }
+
+      form button:hover {
+        background: #00e7ff;
+      }
+
+      footer {
+        text-align: center;
+        padding: 30px 10px;
+        color: #aaa;
+        background: #0e0e1a;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Video background -->
+    <video class="video-bg" autoplay muted loop>
+      <source
+        src="https://cdn.pixabay.com/video/2023/08/16/179786-856202787_large.mp4"
+        type="video/mp4"
+      />
+      Your browser does not support HTML5 video.
+    </video>
+    <div class="overlay"></div>
+
+    <header>
+      <h1>Potu Brahmam</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h2>Hello, I'm Potu Brahmam</h2>
+      <p class="typing-text">
+        CSE (AI & ML) Student | Web Developer | Robotics Enthusiast
+      </p>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="info-block">
+        <p>🎓 Pursuing B.Tech in CSE (AI & ML) at VVIT.</p>
+        <p>⚙️ Building innovative apps blending AI and web tech.</p>
+        <p>📱 Contact: 7396242942</p>
+        <p>📧 Email: potubrahmam143@gmail.com</p>
+        <p>🎂 DOB: 22 sept 2004</p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <ul class="projects">
+        <li>
+          <strong>Digit Recognition System</strong><br />Neural net to recognize
+          handwritten numbers using Python.
+        </li>
+        <li>
+          <strong>Image to Sketch Converter</strong><br />Transforms photos into
+          sketch images using OpenCV.
+        </li>
+      </ul>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills">
+        <span>Python</span>
+        <span>C</span>
+        <span>Java</span>
+        <span>HTML</span>
+        <span>JavaScript</span>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <ul class="education">
+        <li><strong>VVIT College</strong><br />B.Tech in CSE - AI & ML</li>
+        <li><strong>Loyola College</strong><br />12th Grade</li>
+        <li><strong>Gethanjalli School</strong><br />10th Grade</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact Me</h2>
+      <form
+        onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent.')"
+      >
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Potu Brahmam. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+      // Scroll reveal
+      const sections = document.querySelectorAll("section");
+      const revealOnScroll = () => {
+        sections.forEach((section) => {
+          const top = section.getBoundingClientRect().top;
+          if (top < window.innerHeight - 100) {
+            section.classList.add("reveal");
+          }
+        });
+      };
+      window.addEventListener("scroll", revealOnScroll);
+      window.addEventListener("load", revealOnScroll);
+    </script>
+  </body>
+</html>
